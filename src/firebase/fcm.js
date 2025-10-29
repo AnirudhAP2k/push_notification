@@ -8,7 +8,6 @@ admin.initializeApp({
 });
 
 export const sendNotification = async (token, payload) => {
-    console.log(serviceAccount,admin,token,payload);
   try {
     const response = await admin.messaging().send({
       token,
