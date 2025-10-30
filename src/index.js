@@ -3,9 +3,11 @@ import dotenv from "dotenv";
 import cors from "cors";
 import notifyRoutes from "./routes/notify.js";
 import tokenRoutes from "./routes/tokens.js";
+import apiKeyMiddleware from "./middleware.js";
 
 dotenv.config();
 const app = express();
+app.use(apiKeyMiddleware);
 
 app.use(cors());
 app.use(express.json());
